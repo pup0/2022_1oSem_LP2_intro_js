@@ -1,0 +1,116 @@
+1. Analise o trecho de código e as proposições a seguir. I. Erro na linha 1. II. Erro na linha 2. III. Executa e mostra 2. É correto apenas o que se afirma em:
+
+const variavel = 1
+variavel++
+console.log(variavel)
+Resp. II
+
+2. Analise o trecho de código e marque as duas proposições verdadeiras:
+
+console.log(nome)
+const idade = 18
+if (idade >= 18) {
+  var nome = 'João'
+  console.log(nome + ' é maior de idade')
+  }
+  console.log(nome)
+Resp. Exibe undefined João é maior de idade João
+      Caso a palavra var seja trocada por let, na linha 4, o programa passa a se comportar de maneira diferente.
+
+3. Considere o seguinte trecho de código e marque as duas proposições verdadeiras:
+
+const n1 = 5
+let n2 = '10'
+var n3 = n1 + n2
+var n4 = n1 + number(n2)
+console.log(n1, n2, n3, n4)
+Resp. Todas as atribuições são válidas.
+      A linha 3 faz uso de coerção implícita.
+      
+4. Considere o trecho de código e as proposições a seguir. I. A função reduce é uma função de alta ordem. II. O resultado exibido é a soma de todos os elementos 
+contidos na coleção valores. III. O resultado exibido depende da paridade dos elementos contidos na coleção valores. É correto apenas o que se afirma em:
+
+const valores = [1, 2, 3, 4, 5]
+const res = valores.reduce((ac, v) => {
+  return v % 2 ==1 ? ac + v : ac
+)}
+console.log(res)
+Resp. I e III
+
+5. Analise o trecho de código e marque a opção correta:
+
+const soma = (a, b) => {a, b};
+console.log(soma(2, 3));
+Resp. Exibe undefined.
+
+6. Analise o trecho de código e marque a opção correta:
+
+function f1(){
+  console.log('f1');}
+function f2 (f){
+  console.log('f2');
+  f();}
+function f3 (f){
+  f()
+  console.log('f3');
+  return function(){
+    console.log('f4');}}
+f2(f1)
+f3(f1)()
+Resp. Exibe f2 f1 f1 f3 f4
+
+7. Considere o trecho de código e as proposições a seguir. OBS: Suponha que um arquivo chamado arquivo.txt existe, pode ser acessado sem erros e seu conteúdo 
+é 2. I. O código faz uso de arrow functions e, portanto, não apresenta o conceito de "inferno de callbacks". II. Exibe 2 2. 
+III. A função f1 é incondizente com o uso do pacote fs, já que a sua lista de parâmetros não admite o recebimento de um objeto que representa um erro.
+É correto apenas o que se afirma em:
+
+const fs = require('fs');
+const f1 = (nome) => {
+  const f2 = (erro, conteudo) => {
+    if(!erro)
+      console.log9(conteudo.toString())
+    const f3 = erro, conteudo) => {
+      if(!erro)
+        console.log(conteudo.toString())}
+      fs.readFile(nome, f3)}
+    fs.readFile(nome, f2)}
+  f1("arquivo.txt")
+Resp. II
+
+8. Considere o trecho de código e as proposições a seguir. I. A função sempre devolve uma promise no estado Fullfilled. 
+II. O código cliente - aquele que usa a função - pode obter o texto "Tudo OK!" usando a construção then. 
+III. A função const f = ( ) => Promise.resolve("Tudo OK!") é equivalente àquela exibida no trecho de código. É correto apenas o que se afirma em:
+
+function minhaPromise (){
+  return Promise.resolve("Tudo OK!")}
+Resp. I, II e III
+
+9. Analise o trecho de código e marque as duas opções corretas:
+
+const f = async() => {
+  return 1}
+f()
+.then(res => res)
+.then(res => res + 2)
+.then(res => res % 2 == 1)
+.then(res => console.log(res))
+Resp. Há quatro variáveis chamadas res. Elas possuem o mesmo nome e escopos distintos.
+      Exibe true.
+      
+10. Analise o trecho de código e marque as duas opções corretas. (esta questão foi anulada pois a função teste não é chamada,
+o que inviabiliza respondê-la corretamente):
+
+async function f() {
+  return 1;}
+async function teste() {
+  const r = await f()
+  console.log(r)
+  f().then(res => console.log(res))
+  r.then(res => console.log(res))}
+  
+  Resp. Erro na linha 2.
+        Erro nas linhas 2 e 6.
+        Exibe 1 1.
+        Erro nas linhas 2 e 9.
+        A função f devolve uma promise. 
+  
